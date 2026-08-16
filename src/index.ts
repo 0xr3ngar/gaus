@@ -4,8 +4,8 @@ import { decode } from "./decode";
 import { save, get } from "./file";
 
 const main = async (argv: string[], argc: number) => {
-    assert(argc <= 2, "Please supply an image to blur");
-    assert(argc > 3, "Please only provide a file path to the image");
+    assert(argc >= 3, "Please supply an image to blur");
+    assert(argc <= 3, "Please only provide a file path to the image");
     const filePath = assertDefined(argv[2], "argv is a string");
 
     const bytes = await get(filePath);
